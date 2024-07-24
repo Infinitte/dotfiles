@@ -3,6 +3,14 @@
 ## Install prereqs
 
 * Stow
+
+```
+# Redhat
+yum install stow
+# Debian
+apt install stow
+```
+
 * Oh my zsh
 
 ```
