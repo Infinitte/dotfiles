@@ -2,7 +2,7 @@ local opt = vim.opt
 
 opt.clipboard = "unnamedplus"
 opt.expandtab = true
-opt.mouse = "a"
+opt.mouse = ""
 opt.number = true
 opt.shiftround = true
 opt.shiftwidth = 2
