@@ -13,10 +13,9 @@ cd "$DOTFILES_DIR"
 
 # Lista de paquetes disponibles
 PACKAGES=(
-#    "bash"
     "fish" 
     "zellij"
-#    "kitty"
+    "zsh"
 #    "nvim"
 )
 
