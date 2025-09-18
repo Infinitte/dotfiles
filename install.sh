@@ -13,10 +13,11 @@ cd "$DOTFILES_DIR"
 
 # Lista de paquetes disponibles
 PACKAGES=(
-    "bash"
+#    "bash"
     "fish" 
-    "kitty"
-    "nvim"
+    "zellij"
+#    "kitty"
+#    "nvim"
 )
 
 # Función para instalar un paquete
