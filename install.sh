@@ -16,6 +16,7 @@ PACKAGES=(
     "fish" 
     "zellij"
     "zsh"
+    "atuin"
 #    "nvim"
 )
 

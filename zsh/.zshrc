@@ -16,4 +16,9 @@ alias v=nvim
 alias sshc="TERM=xterm-256color ssh"
 
 # Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+## vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# Amazon Q post block. Keep at the bottom of this file.
+#[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
