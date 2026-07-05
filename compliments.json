@@ -1,18 +1,21 @@
 {
-  "anytime": ["Hey there sexy!"],
+  "anytime": [
+    "Problemas tenemos todos.",
+    "Tira por la sombra."
+  ],
   "morning": [
-    "Good morning, sunshine!",
-    "Who needs coffee when you have your smile?",
-    "Go get 'em, Tiger!"
+    "Buenos días. A ver cómo arruinamos el día de hoy.",
+    "Mírate. Ya eres una persona adulta y tienes que hacer cosas. Ánimo.",
+    "Y aún así me levanto."
   ],
   "afternoon": [
-    "Hitting your stride!",
-    "You are making a difference!",
-    "You're more fun than bubble wrap!"
+    "Cree en ti mismo. O no, tampoco te vengas arriba.",
+    "Lo importante no es ganar, es hacer que los demás pierdan.",
+    "Si el plan 'A' no funciona, el abecedario tiene más letras que tampoco sirven."
   ],
   "evening": [
-    "You made someone smile today, I know it.",
-    "You are making a difference.",
-    "The day was better for your efforts."
+    "Otro día superado sin mandar a nadie a la mierda.",
+    "Enhorabuena por sobrevivir a hoy. Mañana será peor.",
+    "Venga, a la cama, que mañana hay que seguir fingiendo que sabemos qué hacer."
   ]
 }
