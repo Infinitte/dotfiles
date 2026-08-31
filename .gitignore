@@ -37,3 +37,4 @@ cache/
 
 # Logs
 *.log
+atuin/.local/share/atuin/history.db
