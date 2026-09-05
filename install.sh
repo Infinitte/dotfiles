@@ -1,73 +1,30 @@
-#!/bin/bash
-
-# Script de instalación de dotfiles usando GNU Stow
+#!/usr/bin/env bash
 
 set -e
 
 DOTFILES_DIR="$HOME/dotfiles"
+REPO_URL="https://github.com/Infinitte/dotfiles.git"
 
-echo "🔧 Instalando dotfiles..."
+# Verificar si git está instalado
+if ! command -v git &> /dev/null; then
+    echo "Error: git no está instalado. Por favor, instálalo primero."
+    exit 1
+fi
 
-# Cambiar al directorio de dotfiles
-cd "$DOTFILES_DIR"
+# Clonar o actualizar el repositorio
+if [ -d "$DOTFILES_DIR" ]; then
+    echo "El directorio $DOTFILES_DIR ya existe. Actualizando repositorio..."
+    git -C "$DOTFILES_DIR" pull
+else
+    echo "Clonando repositorio de dotfiles en $DOTFILES_DIR..."
+    git clone "$REPO_URL" "$DOTFILES_DIR"
+fi
 
-# Lista de paquetes disponibles
-PACKAGES=(
-    "fish" 
-    "zellij"
-    "zsh"
-    "atuin"
-#    "nvim"
-)
-
-# Función para instalar un paquete
-install_package() {
-    local package=$1
-    echo "📦 Instalando $package..."
-    stow -v "$package"
-}
-
-# Función para desinstalar un paquete
-uninstall_package() {
-    local package=$1
-    echo "🗑️  Desinstalando $package..."
-    stow -D -v "$package"
-}
-
-# Función para reinstalar un paquete
-reinstall_package() {
-    local package=$1
-    echo "🔄 Reinstalando $package..."
-    stow -R -v "$package"
-}
-
-# Procesar argumentos
-case "${1:-install}" in
-    "install")
-        for package in "${PACKAGES[@]}"; do
-            if [ -d "$package" ]; then
-                install_package "$package"
-            fi
-        done
-        ;;
-    "uninstall")
-        for package in "${PACKAGES[@]}"; do
-            if [ -d "$package" ]; then
-                uninstall_package "$package"
-            fi
-        done
-        ;;
-    "reinstall")
-        for package in "${PACKAGES[@]}"; do
-            if [ -d "$package" ]; then
-                reinstall_package "$package"
-            fi
-        done
-        ;;
-    *)
-        echo "Uso: $0 [install|uninstall|reinstall]"
-        exit 1
-        ;;
-esac
-
-echo "✅ Completado!"
+# Ejecutar el script post-instalación
+if [ -f "$DOTFILES_DIR/setup.sh" ]; then
+    chmod +x "$DOTFILES_DIR/setup.sh"
+    bash "$DOTFILES_DIR/setup.sh"
+else
+    echo "Error: No se encontró setup.sh en $DOTFILES_DIR"
+    exit 1
+fi
